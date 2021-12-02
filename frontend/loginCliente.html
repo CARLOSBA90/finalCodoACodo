@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Menú Proyecto CAC</title>
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+         <!-- Custom styles for this template -->
+    <link href="./css/signin.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <div class="navbar">
+            <a href="#">Inicio</a>
+            <a href="#">Clientes</a>
+            <a href="#">El Hotel</a>
+            <div class="dropdown">
+                <button class="dropbtn">Reservas
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Mis reservas</a>
+                    <a href="#">Confirmación</a>
+                    <a href="#">Cancelación</a>
+                </div>
+            </div>
+            <a href="#" id="acerca" style="float:right">Acerca del sitio</a>
+        </div>
+    </div>
+    <div class="texto">
+    <form class="form-signin" action="checkuser" method="post">
+      
+        <img class="mb-4" src="./images/vista3.jpg" alt="" width="200" height="100">
+        <h1 class="h3 mb-3 font-weight-normal">Ingresar al sistema</h1>
+        <label for="inputEmail" class="sr-only">Email / Usuario</label>
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" value="prueba@gmail.com" required autofocus>
+        <label for="inputPassword" class="sr-only">Clave</label>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" value="miclave" required>
+        <div class="checkbox mb-3">
+  
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+    </div>
+</form>
+
+
+    <footer>
+        <p>Carlos Peña ©. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
