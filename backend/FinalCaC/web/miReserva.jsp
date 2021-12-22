@@ -76,7 +76,7 @@
                                     <td>Queen</td>
                                 </tr>
                                   <tr>
-                                    <th scope="row">Adicionales/th>
+                                    <th scope="row">Adicionales</th>
                                     <td> -Guias- -Comidas- -Estacionamiento-  </td>
                                 </tr>
                                 

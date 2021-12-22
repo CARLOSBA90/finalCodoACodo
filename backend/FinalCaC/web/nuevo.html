@@ -33,57 +33,61 @@
       <div class="col">
         <div class="wrap">
           <div class="p-3">
-            <form>
+              <form action="nuevoUsuario" method="POST" onsubmit="return validacion()">
+               <div class="form-row">
+              <div class="form-group col">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+              </div>
+              </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="apellido">Apellido</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                  <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                 </div>
               </div>
               <div class="form-row">
               <div class="form-group col">
                 <label for="correo">Correo electrónico</label>
-                <input type="email" class="form-control" id="correo" placeholder="Email">
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="Email">
               </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="contra">Contraseña</label>
-                  <input type="password" class="form-control" id="contra" placeholder="Contraseña">
+                  <input type="password" class="form-control" id="contra" name="contra" placeholder="Contraseña" value="">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="contra2">Contraseña</label>
-                  <input type="password" class="form-control" id="contra2" placeholder="Repetir contraseña">
+                  <input type="password" class="form-control" id="contra2" placeholder="Repetir contraseña" value="">
                 </div>
               </div>
               <div class="form-row">
               <div class="form-group col">
                 <label for="direccion">Dirección</label>
-                <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
               </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="fechaEdad">Fecha de nacimiento</label>
-                  <input type="date" class="form-control" id="fechaEdad">
+                  <input type="date" class="form-control" id="fechaEdad" name="fechaEdad" max="2002-12-31">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="telefono">Telefóno</label>
-                  <input type="tel" class="form-control" id="telefono" placeholder="Telefóno" size="11" minlength="10"
+                  <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefóno" size="11" minlength="10"
                     maxlength="11" required>
                 </div>
               </div>
-
-              <button type="submit" class="btn btn-primary">Registrar</button>
+               <button class="btn btn-primary" type="submit">Registrar</button>
             </form>
-
-
-            </p><br><br>
+              
+              <br><br>
           </div>
         </div>
       </div>
@@ -98,6 +102,17 @@
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+      function validacion(){
+      if(document.getElementById("contra").value!==document.getElementById("contra2").value){
+          document.getElementById("contra").style.backgroundColor = "red";
+          document.getElementById("contra2").style.backgroundColor = "red";
+          alert("Las contraseñas deben ser iguales");
+        return false;
+      } else return true;
+   } 
+      
+  </script>
 </body>
 
 </html>

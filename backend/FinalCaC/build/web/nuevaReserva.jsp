@@ -33,10 +33,12 @@
         </div>
     </div>
     <div class="container">
-        <div class="row mt-2  mb-2 justify-content-center">
+        <div class="row mt-2  mb-4 justify-content-center">
             <div class="col">
-                <h3>Usuario: ${usuario}. Nueva reserva </h3>
+                <h3>Usuario: ${nombre} ${apellido} </h3>
+                <h4>Nueva reserva </h4>
                 <form action="reservar" method="POST">
+                    <input type="hidden" id="id" name="id" value="${id}">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="fechaInicio">Fecha inicio de Estadia</label>
@@ -122,11 +124,9 @@
                         <div class="form-group col-md-3">
                             <p name="total" id="total" name="total">$ 0</p>
                         </div>
-
+                     <button type="submit" class="btn btn-primary h-50 d-inline-block">Reservar</button>
                     </div>
-
-
-                    <button type="submit" class="btn btn-primary">Reservar</button>
+                    
                     <br><br>
                 </form>
             </div>

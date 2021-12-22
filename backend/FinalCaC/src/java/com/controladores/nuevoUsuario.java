@@ -14,17 +14,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.servicios.*;
 import com.modelo.*;
+import java.sql.Date;
 
 /**
  *
  * @author cepr1_000
  */
-@WebServlet(name = "logeo", urlPatterns = {"/logeo"})
-public class logeo extends HttpServlet {
-
+@WebServlet(name = "nuevoUsuario", urlPatterns = {"/nuevoUsuario"})
+public class nuevoUsuario extends HttpServlet {
     accesoUsuario acc = new accesoUsuario();
-    usuario us = new usuario();
-    
+   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,18 +35,29 @@ public class logeo extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String usuario   = request.getParameter("usuario");
+        String nombre    = request.getParameter("nombre");
+        String apellido  = request.getParameter("apellido");
+        String correo    = request.getParameter("correo");
+        String contra    = request.getParameter("contra");
+        String direccion = request.getParameter("direccion");
+        Date   fechaEdad = Date.valueOf(request.getParameter("fechaEdad"));
+        int    telefono  = Integer.parseInt(request.getParameter("telefono")); 
         
-        us = acc.acceder(request.getParameter("usuario"), request.getParameter("contra"));
         
-        if(us.getId()!=0){
+         usuario us = new usuario(1,usuario,contra,correo,fechaEdad,telefono,nombre,apellido,direccion);
+         
+        us = acc.nuevoUsuario(us);
+        
+        if(us!=null){
         request.setAttribute("id", us.getId());
         request.setAttribute("nombre", us.getNombre());
         request.setAttribute("apellido", us.getApellido());
         request.getRequestDispatcher("nuevaReserva.jsp").forward(request, response);
+        }else{
+            request.setAttribute("mensaje", "FALLO EN EL REGISTRO!");
+             request.getRequestDispatcher("mensaje.jsp").forward(request, response);
         }
-       else {
-            request.getRequestDispatcher("denegado.jsp").forward(request, response);
-             }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
