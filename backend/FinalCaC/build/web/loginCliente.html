@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Proyecto CaC</title>
+
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div id="cabecera">
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="loginCliente.html">Clientes</a>
+            <a href="descripcionHotel.html">El Hotel</a>
+            <div class="despliegue">
+                <button class="desplieguebtn">Reservas
+                </button>
+                <div class="despliegue-content">
+                    <a href="reservas.html">Mis reservas</a>
+                    <a href="confirmacion.html">Confirmación</a>
+                    <a href="cancelacion.html">Cancelación</a>
+                </div>
+            </div>
+            <a href="acerca.html" id="acerca" style="float:right">Acerca del sitio</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-2  mb-2 justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="wrap">
+                    <div class="img" style="background-image: url(images/vista1.jpg);"></div>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex justify-content-center">
+                                <h3 >Inicio de sesión</h3>
+                        </div>
+                        <form action="logeo" class="signin-form" method="POST" >
+                            <div class=#"form-group mt-3">
+                                <input type="text" class="form-control" name="usuario" required>
+                                <label class="form-control-placeholder" for="username">Usuario</label>
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" type="password" class="form-control" name="contra" required>
+                                <label class="form-control-placeholder" for="password"></label>
+                                
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Iniciar</button>
+                            </div>
+                        </form>
+                        <p class="text-center">¿Nuevo cliente? <a href="nuevo.html">Registrese</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>Carlos Peña ©</p>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
